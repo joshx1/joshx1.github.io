@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex">
 <title>AYE27 — Augustinian Youth Encounter 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1C1A17;
@@ -63,6 +64,10 @@
     opacity:0.8;
   }
   .hero-content{position:relative; z-index:1;}
+  .kr-welcome{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.08em;
+    color:#B9BFC9; opacity:0.8; margin-bottom:18px;
+  }
   .hero .flame-heart{ width:46px; height:56px; margin:0 auto 22px; }
   .hero .eyebrow{ color:var(--gold); margin-bottom:14px; }
   .hero h1{
@@ -99,14 +104,14 @@
 
   /* ---------- IMAGE BANNER ---------- */
   .img-banner{ position:relative; line-height:0; }
+  .img-banner-tag{
+    position:absolute; left:14px; top:14px; max-width:calc(100% - 28px);
+    background:rgba(0,0,0,0.5); color:#E7C79A;
+    font-family:'IBM Plex Mono', monospace; font-size:9px; letter-spacing:0.03em; line-height:1.4;
+    padding:5px 9px; border-radius:4px; border:1px solid rgba(231,199,154,0.3);
+  }
   .img-banner svg{
     width:100%; height:260px; display:block;
-  }
-  .img-banner figcaption{
-    position:absolute; left:0; right:0; bottom:0;
-    background:linear-gradient(0deg, rgba(0,0,0,0.65) 0%, transparent 100%);
-    color:#F0E6D2; font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:0.03em; padding:22px 20px 12px; line-height:1.4;
   }
 
   /* ---------- ABOUT ---------- */
@@ -120,12 +125,18 @@
   .about-card p{ font-size:13.5px; line-height:1.6; color:#4A453D; margin:0; }
   .about-card p a{ color:var(--wine); text-decoration:underline; }
   .about-card-img{ padding:0; overflow:hidden; }
-  .about-card-img svg, .about-card-img img{ width:100%; height:150px; display:block; object-fit:cover; object-position:center 14%; }
   .about-card-img .about-card-body{ padding:16px 20px 18px; }
+  .img-frame{ position:relative; overflow:hidden; }
+  .img-frame img{ width:100%; height:150px; display:block; object-fit:cover; object-position:center 14%; }
+  .img-credit{
+    position:absolute; right:4px; bottom:4px;
+    background:rgba(0,0,0,0.4); color:rgba(240,230,210,0.8);
+    font-family:'IBM Plex Mono', monospace; font-size:5.5px;
+    letter-spacing:0.01em; padding:1.5px 4px; border-radius:2px; line-height:1.2;
+  }
+  .img-credit a{ color:#F0E6D2; text-decoration:underline; }
   .about-card-logo-frame{ width:100%; height:150px; background:var(--white); display:flex; align-items:center; justify-content:center; padding:18px; }
   .about-card-logo-frame img{ width:auto; height:auto; max-width:55%; max-height:100%; object-fit:contain; }
-  .credit{ font-size:10.5px; color:#B9B3A6; margin-top:6px; }
-  .credit a{ color:#B9B3A6; }
 
   /* ---------- VERSE ---------- */
   .verse-section{
@@ -139,6 +150,7 @@
     font-family:'Fraunces', serif; font-style:italic; font-weight:500;
     font-size:22px; line-height:1.5; margin-bottom:16px;
   }
+  .verse-kr{ font-family:'Noto Serif KR', 'Fraunces', serif; font-weight:900; font-size:19px; color:var(--white); opacity:0.9; margin-bottom:14px; }
   .verse-cite{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.08em; color:#E7C79A; text-transform:uppercase; }
 
   /* ---------- SCHEDULE ---------- */
@@ -235,6 +247,7 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-content">
+      <div class="kr-welcome">환영합니다 · Welcome</div>
       <svg class="flame-heart" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 44C20 44 5 34.5 5 21.5C5 13.5 10.8 8 17.5 8C19 8 20 9 20 9C20 9 21 8 22.5 8C29.2 8 35 13.5 35 21.5C35 34.5 20 44 20 44Z" stroke="#E7C79A" stroke-width="1.6" stroke-linejoin="round"/>
         <path d="M20 8C19 5 19.5 2.5 22 1C20.5 4 21.5 6 23.5 7.5C26 5.5 26 3 25 1C28.5 2 29.5 6 27.5 9C29.5 8.5 31 7.5 32 6C31.5 10 28 12.5 24.5 12" stroke="#B98B3E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -290,7 +303,7 @@
         <path d="M-46 8L-58 8L-58 20" stroke="#E7C79A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </g>
     </svg>
-    <figcaption>The flaming heart, pierced by an arrow — the emblem of the Augustinian charism</figcaption>
+    <div class="img-banner-tag">Placeholder — to be replaced with the AYE27 logo winner</div>
   </figure>
 
   <!-- ABOUT -->
@@ -299,20 +312,17 @@
       <div class="eyebrow">About the encounter</div>
       <h2>One family, gathered from every corner of the world</h2>
     </div>
-    <p>Embark on a transformative journey at the Augustinian Youth Encounter 2027 (AYE27) in South Korea. This global gathering brings together the young hearts of the Augustinian Family from every corner of the world to celebrate our shared faith and community.</p>
-    <p>Taking place from August 8–13, 2027, AYE27 is a sacred invitation to deepen your relationship with Christ and rediscover the power of the Augustinian charism — a time to renew our identity as a global community, proving that though we come from different nations, we move as one.</p>
+    <p>Augustinian Youth Encounters began in 1987 to accompany young adults growing in life and faith through Augustinian communities worldwide. AYE27 hopes to gather 300–400 young people in South Korea — the first Encounter since the election of Pope Leo XIV, an Augustinian and son of Saint Augustine, and a moment to rediscover the charism's beauty in the service of the Church.</p>
 
     <div class="about-cards">
-      <div class="about-card">
-        <h3>A Journey of Faith and Identity</h3>
-        <p>A time to renew our identity as a global community, proving that though we come from different nations, we move as one.</p>
-      </div>
       <div class="about-card about-card-img">
-        <img src="media/augustine.jpg" alt="Fresco of Saint Augustine of Hippo enthroned among angels" loading="lazy">
+        <div class="img-frame">
+          <img src="media/augustine.jpg" alt="Fresco of Saint Augustine of Hippo enthroned among angels" loading="lazy">
+          <div class="img-credit">"Holy Father Augustine" by Lawrence OP · <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=openverse" target="_blank" rel="noopener">CC BY-NC-ND 2.0</a></div>
+        </div>
         <div class="about-card-body">
           <h3>Our Father, Our Guide</h3>
-          <p>St. Augustine's own restless search for God — "our hearts are restless until they rest in You" — is the heartbeat of AYE27's theme this year.</p>
-          <p class="credit">"Holy Father Augustine" by Lawrence OP, <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=openverse" target="_blank" rel="noopener">CC BY-NC-ND 2.0</a></p>
+          <p>In the spirit of St. Augustine, let us be of one mind and heart on the way to God.</p>
         </div>
       </div>
       <div class="about-card about-card-img">
@@ -321,7 +331,7 @@
         </div>
         <div class="about-card-body">
           <h3>Walking Together in Seoul</h3>
-          <p>Set against the vibrant backdrop of South Korea, AYE27 begins immediately following <a href="https://wydseoul.org/en" target="_blank" rel="noopener">World Youth Day 2027</a> in Seoul — a once-in-a-lifetime chance to walk together, one mind and one heart, on our collective way toward God. Our theme echoes WYD Seoul's own call to "take courage" (John 16:33).</p>
+          <p>AYE27 begins immediately after <a href="https://wydseoul.org/en" target="_blank" rel="noopener">World Youth Day 2027</a> in Seoul, continuing WYD's own theme: "Take courage! I have overcome the world" (John 16:33).</p>
         </div>
       </div>
     </div>
@@ -333,7 +343,8 @@
       <path d="M20 44C20 44 5 34.5 5 21.5C5 13.5 10.8 8 17.5 8C19 8 20 9 20 9C20 9 21 8 22.5 8C29.2 8 35 13.5 35 21.5C35 34.5 20 44 20 44Z" stroke="#FFFDF9" stroke-width="1.6" stroke-linejoin="round"/>
       <line x1="9" y1="30" x2="31" y2="14" stroke="#FFFDF9" stroke-width="1.6" stroke-linecap="round"/>
     </svg>
-    <div class="verse-text">"Take heart, it is I.<br>Have no fear."</div>
+    <div class="verse-text">Take heart, it is I.<br>Have no fear.</div>
+    <div class="verse-kr">안심하라 내니 두려워하지 말라</div>
     <div class="verse-cite">Mark 6:50 — Theme for AYE27</div>
   </section>
 
@@ -346,7 +357,7 @@
 
     <div id="days"></div>
 
-    <div class="draft-note"><span class="draft-dot"></span> Draft schedule — placeholder, subject to change as AYE27 is finalized.</div>
+    <div class="draft-note"><span class="draft-dot"></span> Draft schedule — subject to change as AYE27 is finalized.</div>
   </section>
 
   <!-- VENUE -->
@@ -368,7 +379,6 @@
           <span class="tag">Large sports field</span>
           <span class="tag">Shuttle from Seoul</span>
         </div>
-        <p class="venue-note">AYE27 gathers at Hanmaeum, which has an official reservation notice for the WYD 2027 period. Tel. +82&nbsp;31-840-0018 · <a href="mailto:service@hanmaum84.com">service@hanmaum84.com</a> · <a href="https://hanmaum84.com/main/index.php" target="_blank" rel="noopener">hanmaum84.com</a></p>
       </div>
     </div>
   </section>
@@ -378,7 +388,7 @@
       <path d="M20 44C20 44 5 34.5 5 21.5C5 13.5 10.8 8 17.5 8C19 8 20 9 20 9C20 9 21 8 22.5 8C29.2 8 35 13.5 35 21.5C35 34.5 20 44 20 44Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
       <line x1="9" y1="30" x2="31" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
     </svg>
-    <p>Augustinian Youth Encounter 2027<br><a href="https://www.ayeosa.com/" target="_blank" rel="noopener">ayeosa.com</a> · <a href="mailto:admin@ayeosa.com">admin@ayeosa.com</a></p>
+    <p>Augustinian Youth Encounter 2027<br><a href="https://www.ayeosa.com/" target="_blank" rel="noopener">ayeosa.com</a></p>
     <p style="margin-top:6px;">Following <a href="https://wydseoul.org/en" target="_blank" rel="noopener">World Youth Day Seoul 2027</a></p>
   </footer>
 
