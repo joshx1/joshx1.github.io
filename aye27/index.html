@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>AYE27 — Augustinian Youth Encounter 2027</title>
+<meta name="description" content="Your companion for the Augustinian Youth Encounter 2027 — Aug 8–13 in Seoul, South Korea. Schedule, venue, map and everything you need for the week.">
+
+<!-- Theme / mobile app -->
+<meta name="theme-color" content="#0A1633">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AYE27">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Favicon: official AYE27 mark -->
+<link rel="icon" type="image/png" sizes="32x32" href="media/logo/web/aye27-mark-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="media/logo/web/aye27-mark-64.png">
+<link rel="icon" type="image/png" sizes="192x192" href="media/logo/web/aye27-mark-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="media/logo/web/aye27-mark-180.png">
+
+<!-- Open Graph / social link previews (WhatsApp, iMessage, KakaoTalk, etc.) -->
+<!-- NOTE: update og:url / og:image to your deployed absolute URL before launch -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AYE27">
+<meta property="og:title" content="Augustinian Youth Encounter 2027">
+<meta property="og:description" content="One heart, one journey. Aug 8–13, 2027 · Seoul, South Korea. Schedule, venue and everything you need for the week.">
+<meta property="og:locale" content="en">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:url" content="https://joshx1.github.io/aye27/">
+<meta property="og:image" content="https://joshx1.github.io/aye27/media/logo/web/aye27-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AYE 2027 — Augustinian Youth Encounter">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Augustinian Youth Encounter 2027">
+<meta name="twitter:description" content="One heart, one journey. Aug 8–13, 2027 · Seoul, South Korea.">
+<meta name="twitter:image" content="https://joshx1.github.io/aye27/media/logo/web/aye27-og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ---------- BRAND PALETTE — AYE 2027 style guidelines ---------- */
+    /* Primary */
+    --rose:#AB0006;          /* Classic Rose   */
+    --red:#FF0000;           /* Digital Red    */
+    --amber:#FFBC00;         /* Amber          */
+    /* Secondary */
+    --cobalt:#0044A9;        /* Cobalt Blue    */
+    --brandeis:#005EFF;      /* Brandeis Blue  */
+    --azure:#008CFF;         /* Azure          */
+    /* Neutral */
+    --true-gray:#939393;     /* True Gray      */
+
+    /* ---------- Derived tints (not in the guidelines) ---------- */
+    --amber-light:#FFD980;   /* amber legible on dark grounds    */
+    /* Hero heading gradient — kept from the previous scheme by request */
+    --heading-top:#FFFDF9;   /* warm white */
+    --heading-tint:#E9D9BE;  /* warm cream */
+
+    /* ---------- Surfaces ---------- */
+    --ink:#0A1633;           /* deep navy ground                 */
+    --ink-deep:#06102A;      /* gradient floor                   */
+    --ink-raise:#123C7A;     /* lifted navy, gradient top        */
+    --card-dark:#14203F;     /* raised card on dark              */
+    --paper:#FFFFFF;
+    --paper-tint:#F4F6FA;    /* light section ground             */
+    --paper-note:#EEF3FC;    /* callout ground                   */
+    --white:#FFFFFF;
+
+    /* ---------- Text ---------- */
+    --text:#0A1633;
+    --text-body:#2B3550;
+    --text-soft:#3C4761;
+    --text-muted:#7C8598;
+    --text-faint:#8A93A6;
+    --on-dark:#C3D0E8;
+    --on-dark-soft:#A9BAD8;
+    --on-dark-faint:#A9B6CC;
+
+    /* ---------- Lines ---------- */
+    --line: rgba(10,22,51,0.12);
+    --line-dark: rgba(255,255,255,0.08);
+    --amber-veil: rgba(255,188,0,0.14);
+    --amber-edge: rgba(255,217,128,0.3);
+
+    /* ---------- Brand gradients (from the logo) ---------- */
+    --grad-warm: linear-gradient(135deg, var(--amber) 0%, var(--red) 100%);
+    --grad-cool: linear-gradient(135deg, var(--azure) 0%, var(--cobalt) 100%);
+
+    --nav-h: 64px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper-tint);
+    color:var(--text);
+    font-family:'Montserrat', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:var(--nav-h);
+    overflow-x:hidden;
+  }
+  .wrap{max-width:480px; margin:0 auto; position:relative;}
+
+  h1,h2,h3{font-family:'Montserrat', sans-serif; font-weight:700; letter-spacing:-0.02em;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--rose); font-weight:500;
+  }
+  a{color:inherit;}
+
+  /* ---------- Accessibility ---------- */
+  .skip-link{
+    position:absolute; left:50%; top:8px; transform:translate(-50%,-160%);
+    background:var(--amber); color:var(--ink); padding:9px 16px; border-radius:4px;
+    font-size:13px; font-weight:600; z-index:100; text-decoration:none;
+    transition:transform 0.18s ease;
+  }
+  .skip-link:focus{ transform:translate(-50%,0); }
+  :focus-visible{ outline:2px solid var(--amber); outline-offset:2px; border-radius:2px; }
+  .hero :focus-visible, .verse-section :focus-visible, .venue :focus-visible{ outline-color:var(--amber-light); }
+
+  /* ---------- Brand mark ---------- */
+  .brand-mark{ display:block; }
+  /* mono mark sits on the rose ground — flip it to solid white */
+  .brand-mark-invert{ filter:brightness(0) invert(1); opacity:0.92; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(120% 90% at 50% -10%, var(--ink-raise) 0%, var(--ink) 55%, var(--ink-deep) 100%);
+    color:var(--white);
+    padding:64px 28px 44px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image: radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.5) 0, transparent 100%),
+                       radial-gradient(1px 1px at 70% 15%, rgba(255,255,255,0.35) 0, transparent 100%),
+                       radial-gradient(1.5px 1.5px at 85% 60%, rgba(255,255,255,0.3) 0, transparent 100%),
+                       radial-gradient(1px 1px at 40% 75%, rgba(255,255,255,0.25) 0, transparent 100%),
+                       radial-gradient(1px 1px at 10% 65%, rgba(255,255,255,0.3) 0, transparent 100%);
+    opacity:0.8;
+  }
+  .hero-content{position:relative; z-index:1;}
+  .kr-welcome{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.08em;
+    color:var(--on-dark-soft); opacity:0.8; margin-bottom:18px;
+  }
+  .hero .brand-mark{ width:88px; height:88px; margin:0 auto 20px; display:block; }
+  .hero .eyebrow{ color:var(--amber); margin-bottom:14px; }
+  .hero h1{
+    font-size:34px; line-height:1.1; margin-bottom:10px;
+    background: linear-gradient(180deg, var(--heading-top) 0%, var(--heading-tint) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero .sub{
+    font-size:15px; color:var(--on-dark); max-width:34ch; margin:0 auto 22px; line-height:1.5;
+  }
+  .countdown{
+    display:inline-flex; align-items:center; gap:8px; margin:0 auto 28px;
+    padding:7px 14px; border-radius:100px;
+    background:var(--amber-veil); border:1px solid var(--amber-edge);
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.04em;
+    color:var(--amber-light);
+  }
+  .countdown .pulse{
+    width:7px; height:7px; border-radius:50%; background:var(--amber); flex-shrink:0;
+    box-shadow:0 0 0 0 rgba(255,188,0,0.6); animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{ box-shadow:0 0 0 0 rgba(255,188,0,0.55); }
+    70%{ box-shadow:0 0 0 7px rgba(255,188,0,0); }
+    100%{ box-shadow:0 0 0 0 rgba(255,188,0,0); }
+  }
+  .countdown b{ color:var(--white); font-weight:600; }
+  .hero-meta{
+    display:flex; justify-content:center; gap:22px; margin-bottom:30px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--on-dark-soft);
+  }
+  .hero-meta div{text-align:center;}
+  .hero-meta b{display:block; color:var(--white); font-size:13px; font-weight:500; margin-bottom:2px;}
+  .hero-meta .div-line{width:1px; background:rgba(255,255,255,0.15);}
+
+  .btn-row{display:flex; flex-direction:column; gap:10px; align-items:center;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:13px 26px; border-radius:3px; font-size:13px; font-weight:600;
+    letter-spacing:0.03em; text-decoration:none; width:100%; max-width:320px;
+    border:1px solid transparent;
+  }
+  .btn-primary{ background:var(--amber); color:var(--ink); }
+  .btn-ghost{ background:transparent; color:var(--white); border-color:rgba(255,255,255,0.35); }
+
+  /* ---------- SECTION shell ---------- */
+  section{padding:52px 26px;}
+  .section-head{ margin-bottom:26px; }
+  .section-head .eyebrow{ margin-bottom:8px; }
+  .section-head h2{ font-size:24px; line-height:1.25; }
+
+  /* ---------- IMAGE BANNER ---------- */
+  .img-banner{ position:relative; line-height:0; }
+  .img-banner-tag{
+    position:absolute; left:14px; top:14px; max-width:calc(100% - 28px);
+    background:rgba(0,0,0,0.5); color:var(--amber-light);
+    font-family:'IBM Plex Mono', monospace; font-size:9px; letter-spacing:0.03em; line-height:1.4;
+    padding:5px 9px; border-radius:4px; border:1px solid var(--amber-edge);
+  }
+  .img-banner svg{
+    width:100%; height:260px; display:block;
+  }
+  /* Starts on --ink-deep so it picks up exactly where the hero's radial bottoms out,
+     then lifts toward --ink to ease into the light section below. */
+  .brand-banner{
+    background: linear-gradient(180deg, var(--ink-deep) 0%, var(--ink) 100%);
+    padding:4px 26px 34px; display:flex; align-items:center; justify-content:center;
+  }
+  .brand-banner img{ width:100%; max-width:300px; height:auto; display:block; }
+
+  /* ---------- ABOUT ---------- */
+  .about p{ font-size:15px; line-height:1.7; color:var(--text-body); margin-bottom:16px; }
+  .about-cards{ display:flex; flex-direction:column; gap:14px; margin-top:24px; }
+  .about-card{
+    background:var(--white); border:1px solid var(--line); border-radius:4px;
+    padding:18px 20px; position:relative; border-left:3px solid var(--rose);
+  }
+  .about-card h3{ font-size:15px; margin-bottom:6px; color:var(--rose); }
+  .about-card p{ font-size:13.5px; line-height:1.6; color:var(--text-soft); margin:0; }
+  .about-card p a{ color:var(--rose); text-decoration:underline; }
+  .about-card-img{ padding:0; overflow:hidden; }
+  .about-card-img .about-card-body{ padding:16px 20px 18px; }
+  .img-frame{ position:relative; overflow:hidden; }
+  .img-frame img{ width:100%; height:150px; display:block; object-fit:cover; object-position:center 14%; }
+  .img-credit{
+    position:absolute; right:4px; bottom:4px;
+    background:rgba(0,0,0,0.4); color:rgba(232,238,249,0.85);
+    font-family:'IBM Plex Mono', monospace; font-size:5.5px;
+    letter-spacing:0.01em; padding:1.5px 4px; border-radius:2px; line-height:1.2;
+  }
+  .img-credit a{ color:#E8EEF9; text-decoration:underline; }
+  .about-card-logo-frame{ width:100%; height:150px; background:var(--white); display:flex; align-items:center; justify-content:center; padding:18px; }
+  .about-card-logo-frame img{ width:auto; height:auto; max-width:55%; max-height:100%; object-fit:contain; }
+
+  /* ---------- VERSE ---------- */
+  .verse-section{
+    background:var(--rose);
+    color:var(--white); text-align:center; padding:56px 30px;
+    position:relative;
+  }
+  .verse-section .brand-mark{ width:52px; height:52px; margin:0 auto 20px; display:block; }
+  .verse-text{
+    font-family:'Montserrat', sans-serif; font-style:italic; font-weight:500;
+    font-size:22px; line-height:1.4; margin-bottom:16px;
+  }
+  .verse-kr{ font-family:'Noto Sans KR', sans-serif; font-weight:700; font-size:19px; color:var(--white); opacity:0.9; margin-bottom:14px; }
+  .verse-cite{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.08em; color:var(--amber-light); text-transform:uppercase; }
+
+  /* ---------- SCHEDULE ---------- */
+  .schedule{background:var(--paper-tint);}
+  .day{
+    border:1px solid var(--line); border-radius:5px; background:var(--white);
+    margin-bottom:12px; overflow:hidden;
+  }
+  .day-toggle{
+    width:100%; display:flex; align-items:center; gap:14px;
+    padding:16px 18px; background:none; border:none; text-align:left; cursor:pointer;
+    font-family:inherit; color:inherit;
+  }
+  .day-info{flex:1;}
+  .day-info .d-label{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.1em; color:var(--rose); text-transform:uppercase; margin-bottom:2px;}
+  .day-info .d-date{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.06em; color:var(--text-faint); margin-left:8px; text-transform:none;}
+  .day-info .d-title{ font-family:'Montserrat', sans-serif; font-size:16px; font-weight:600;}
+  .today-badge{
+    display:inline-block; margin-left:8px; padding:2px 7px; border-radius:100px;
+    background:var(--amber); color:var(--ink);
+    font-family:'IBM Plex Mono', monospace; font-size:9px; font-weight:600;
+    letter-spacing:0.08em; text-transform:uppercase; vertical-align:middle;
+  }
+  .day.is-today{ border-color:var(--amber); box-shadow:0 0 0 1px var(--amber); }
+  .day-chevron{ width:18px; height:18px; flex-shrink:0; transition:transform 0.25s ease; color:var(--text-faint);}
+  .day.open .day-chevron{ transform:rotate(180deg); }
+  .day-events{
+    max-height:0; overflow:hidden; transition:max-height 0.35s ease;
+    border-top:1px solid transparent;
+  }
+  .day.open .day-events{ border-top:1px solid var(--line); }
+  .day-events-inner{ padding:6px 18px 16px; }
+  .event{ display:flex; gap:14px; padding:11px 0; border-bottom:1px dashed var(--line); }
+  .event:last-child{border-bottom:none;}
+  .event time{
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--cobalt);
+    flex-shrink:0; width:52px; padding-top:1px;
+  }
+  .event .e-title{ font-size:13.5px; font-weight:600; color:var(--text); margin-bottom:2px;}
+  .event .e-loc{ font-size:12px; color:var(--text-muted); }
+  .draft-note{
+    display:flex; align-items:center; gap:8px; font-size:11.5px; color:var(--text-muted);
+    margin-top:16px; font-family:'IBM Plex Mono', monospace;
+  }
+  .draft-dot{width:6px; height:6px; border-radius:50%; background:var(--amber); flex-shrink:0;}
+
+  /* ---------- VENUE ---------- */
+  .venue{ background:var(--ink); color:var(--white); }
+  .venue .eyebrow{ color:var(--amber); }
+  .venue h2{ color:var(--white); }
+  .venue-card{
+    background:var(--card-dark); border:1px solid var(--line-dark); border-radius:6px;
+    overflow:hidden; margin-top:22px;
+  }
+  .map-frame{ width:100%; height:220px; border:0; display:block; filter:grayscale(0.15) contrast(1.05); }
+  .venue-details{ padding:20px; }
+  .venue-details h3{ font-size:17px; margin-bottom:4px; color:var(--white); }
+  .venue-details .addr{ font-size:13px; color:var(--on-dark-faint); line-height:1.5; margin-bottom:14px; }
+  .venue-note{ font-size:12.5px; color:var(--text-muted); line-height:1.6; }
+  .venue-note a{ color:var(--amber); text-decoration:underline; }
+  .venue-actions{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+  .action-btn{
+    display:inline-flex; align-items:center; gap:7px; flex:1; min-width:140px;
+    justify-content:center; padding:11px 14px; border-radius:4px;
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.16);
+    color:var(--white); text-decoration:none; font-size:12.5px; font-weight:600;
+    letter-spacing:0.02em; cursor:pointer; font-family:inherit;
+  }
+  .action-btn svg{ width:16px; height:16px; flex-shrink:0; }
+  .action-btn:hover{ background:rgba(255,255,255,0.1); }
+
+  /* ---------- Share (hero) ---------- */
+  .share-btn{
+    background:none; border:none; cursor:pointer; color:var(--on-dark); font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.06em; display:inline-flex; align-items:center; gap:6px;
+    margin-top:20px; padding:6px 4px;
+  }
+  .share-btn svg{ width:14px; height:14px; }
+  .share-btn:hover{ color:var(--white); }
+
+  /* ---------- No-JS fallback ---------- */
+  .noscript-note{
+    background:var(--paper-note); border:1px solid var(--line); border-left:3px solid var(--rose);
+    border-radius:4px; padding:14px 16px; font-size:13px; color:var(--text-soft); line-height:1.5;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding:32px 26px 40px; text-align:center; }
+  footer .brand-mark{ width:40px; height:40px; margin:0 auto 12px; display:block; }
+  footer p{ font-size:11.5px; color:var(--text-muted); line-height:1.6; }
+  footer p a{ color:var(--rose); text-decoration:underline; }
+
+  /* ---------- BOTTOM NAV ---------- */
+  .tabbar{
+    position:fixed; bottom:0; left:0; right:0; height:var(--nav-h);
+    background:rgba(10,22,51,0.94); backdrop-filter:blur(10px);
+    display:flex; justify-content:center; z-index:50;
+    border-top:1px solid var(--line-dark);
+  }
+  .tabbar-inner{
+    width:100%; max-width:480px; display:flex;
+  }
+  .tab{
+    flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:4px; color:var(--text-muted); text-decoration:none; font-family:'IBM Plex Mono', monospace;
+    font-size:10px; letter-spacing:0.02em; transition:color 0.2s ease;
+  }
+  .tab svg{ width:19px; height:19px; }
+  .tab.active{ color:var(--amber); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .day-events, .day-chevron{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#schedule">Skip to schedule</a>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="kr-welcome"><span lang="ko">환영합니다</span> · Welcome</div>
+      <img class="brand-mark" src="media/logo/web/aye27-mark-192.png"
+           alt="AYE 2027 emblem — a cross and open book within a heart" width="88" height="88">
+      <div class="eyebrow">Aug 8 – 13, 2027 · Seoul, South Korea</div>
+      <h1>Augustinian Youth<br>Encounter 2027</h1>
+      <p class="sub">Welcome, AYE27 family. One heart, one journey — everything you need for the week is right here.</p>
+
+      <div class="countdown" id="countdown" hidden>
+        <span class="pulse"></span>
+        <span id="countdown-text"></span>
+      </div>
+
+      <div class="hero-meta">
+        <div><b>6</b>days together</div>
+        <div class="div-line"></div>
+        <div><b>40+</b>countries</div>
+        <div class="div-line"></div>
+        <div><b>After</b>WYD Seoul</div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" id="schedule-cta" href="#schedule">View the schedule</a>
+        <a class="btn btn-ghost" href="#venue">Venue &amp; map</a>
+      </div>
+
+      <button class="share-btn" id="share-btn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span id="share-label">Share with your group</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- IMAGE BANNER -->
+  <figure class="img-banner brand-banner">
+    <img src="media/logo/web/aye27-lockup-800.png"
+         alt="AYE 2027 — Augustinian Youth Encounter" width="300" height="150" loading="lazy">
+  </figure>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-head">
+      <div class="eyebrow">About the encounter</div>
+      <h2>One family, gathered from every corner of the world</h2>
+    </div>
+    <p>Augustinian Youth Encounters began in 1987 to accompany young adults growing in life and faith through Augustinian communities worldwide. AYE27 hopes to gather 300–400 young people in South Korea — the first Encounter since the election of Pope Leo XIV, an Augustinian and son of Saint Augustine, and a moment to rediscover the charism's beauty in the service of the Church.</p>
+
+    <div class="about-cards">
+      <div class="about-card about-card-img">
+        <div class="img-frame">
+          <img src="media/augustine.jpg" alt="Fresco of Saint Augustine of Hippo enthroned among angels" loading="lazy">
+          <div class="img-credit">"Holy Father Augustine" by Lawrence OP · <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=openverse" target="_blank" rel="noopener">CC BY-NC-ND 2.0</a></div>
+        </div>
+        <div class="about-card-body">
+          <h3>Our Founding Father</h3>
+          <p>In the spirit of St. Augustine, let us be of one mind and heart on the way to God.</p>
+        </div>
+      </div>
+      <div class="about-card about-card-img">
+        <div class="about-card-logo-frame">
+          <img src="media/wyd_logo.png" alt="World Youth Day Seoul 2027 emblem">
+        </div>
+        <div class="about-card-body">
+          <h3>Walking Together in Seoul</h3>
+          <p>AYE27 begins immediately after <a href="https://wydseoul.org/en" target="_blank" rel="noopener">World Youth Day 2027</a> in Seoul, continuing WYD's own theme: "Take courage! I have overcome the world" (John 16:33).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME VERSE -->
+  <section class="verse-section">
+    <img class="brand-mark brand-mark-invert" src="media/logo/web/aye27-mark-mono-128.png"
+         alt="" aria-hidden="true" width="52" height="52">
+    <div class="verse-text">Take heart, it is I.<br>Have no fear.</div>
+    <div class="verse-kr" lang="ko">안심하라 내니 두려워하지 말라</div>
+    <div class="verse-cite">Mark 6:50 — Theme for AYE27</div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="schedule" id="schedule">
+    <div class="section-head">
+      <div class="eyebrow">Aug 8–13, 2027</div>
+      <h2>Schedule at a glance</h2>
+    </div>
+
+    <div id="days"></div>
+
+    <noscript>
+      <div class="noscript-note">The day-by-day schedule needs JavaScript to display. Please enable it, or reach us at <a href="https://www.ayeosa.com/" target="_blank" rel="noopener">ayeosa.com</a> for the full timetable.</div>
+    </noscript>
+
+    <div class="draft-note"><span class="draft-dot"></span> Draft schedule — subject to change as AYE27 is finalized.</div>
+  </section>
+
+  <!-- VENUE -->
+  <section class="venue" id="venue">
+    <div class="section-head">
+      <div class="eyebrow">Where we gather</div>
+      <h2>Venue &amp; map</h2>
+    </div>
+
+    <div class="venue-card">
+      <iframe class="map-frame" title="Map showing Hanmaeum Youth Training Center in Yangju-si, South Korea"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=147-142+Beodeul-ro,+Yangju-si,+Gyeonggi-do,+South+Korea&output=embed"></iframe>
+      <div class="venue-details">
+        <h3>Hanmaeum Youth Training Center</h3>
+        <div class="addr">147-142 Beodeul-ro, Eodun-dong, Yangju-si, Gyeonggi-do, South Korea</div>
+
+        <div class="venue-actions">
+          <a class="action-btn" href="https://www.google.com/maps/dir/?api=1&destination=147-142+Beodeul-ro%2C+Yangju-si%2C+Gyeonggi-do%2C+South+Korea" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>
+            Get directions
+          </a>
+          <a class="action-btn" id="calendar-btn" href="#" download="AYE27.ics">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M8 3v4M16 3v4M3.5 10h17M12 13v5M9.5 15.5h5"/></svg>
+            Add to calendar
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img class="brand-mark" src="media/logo/web/aye27-mark-mono-128.png"
+         alt="" aria-hidden="true" width="40" height="40">
+    <p>Augustinian Youth Encounter 2027<br><a href="https://www.ayeosa.com/" target="_blank" rel="noopener">ayeosa.com</a></p>
+    <p style="margin-top:6px;">Following <a href="https://wydseoul.org/en" target="_blank" rel="noopener">World Youth Day Seoul 2027</a></p>
+  </footer>
+
+</div>
+
+<!-- BOTTOM TAB NAV -->
+<nav class="tabbar" aria-label="Primary">
+  <div class="tabbar-inner">
+    <a class="tab active" href="#home" data-target="home" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 11.5L12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+      Home
+    </a>
+    <a class="tab" href="#schedule" data-target="schedule">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>
+      Schedule
+    </a>
+    <a class="tab" href="#venue" data-target="venue">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>
+      Venue
+    </a>
+    <a class="tab" href="#about" data-target="about">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+      About
+    </a>
+  </div>
+</nav>
+
+<script>
+  // ---- Schedule data (from official AYE27 draft timetable) ----
+  const schedule = [
+    {
+      date: "SUN · AUG 8", title: "We Arrive — Our Restless Hearts Find Rest Here (Arrival & Welcome)",
+      events: [
+        ["12:00","Transit to AYE27","En route"],
+        ["13:00","Registration","Welcome Desk"],
+        ["15:30","Registration & fellowship","Main Hall"],
+        ["18:00","Dinner","Refectory"],
+        ["19:00","Fellowship","Courtyard"],
+        ["Night","Registration continues","Welcome Desk"],
+        ["22:00","Under-18 lights out · Bar opens","Main Hall"],
+        ["23:00","Bar closes · Lights out","Main Hall"],
+        ["24:00","Silence begins","Center-wide"]
+      ]
+    },
+    {
+      date: "MON · AUG 9", title: "We Are One Heart — Love at the Heart of Everything (Community & Joy)",
+      events: [
+        ["08:00","Breakfast","Refectory"],
+        ["08:30","Bus departure & registration","Main Gate"],
+        ["09:00","WYD Mass","Seoul"],
+        ["12:00","Cultural Day in Seoul — Korean Martyrs' Shrine (ETA 90–120 min)","Seoul"],
+        ["15:30","Registration & fellowship","Main Hall"],
+        ["17:00","Welcome Mass (Multilingual)","Chapel"],
+        ["18:00","Dinner","Refectory"],
+        ["19:00","Fellowship","Courtyard"],
+        ["Night","Welcome to Korea / Games Night","Main Hall"],
+        ["21:30","Fellowship / snacks","Main Hall"],
+        ["22:00","Under-18 lights out · Bar opens","Main Hall"],
+        ["23:00","Bar closes · Lights out","Main Hall"],
+        ["24:00","Silence begins","Center-wide"]
+      ]
+    },
+    {
+      date: "TUE · AUG 10", title: "We Listen Within — Truth Dwells in the Interior Person (Reflection & Interiority)",
+      events: [
+        ["07:00","Prayer (English)","Chapel"],
+        ["07:30","Breakfast","Refectory"],
+        ["08:30","Icebreaker / activity","Main Hall"],
+        ["09:00","Plenary conference — TBC: Fr Joseph Farrell, OSA / Fr Martin Davakan, OSA","Main Hall"],
+        ["10:30","Morning tea","Courtyard"],
+        ["11:00","Breakout sessions (EN/ES) — faith encounters from youth around the world","Various fixed locations"],
+        ["12:00","Lunch","Refectory"],
+        ["13:00","Breakout sessions (EN/ES) — visioning & developing OSA Youth","Various fixed locations"],
+        ["15:00","Afternoon tea / small group","Courtyard"],
+        ["15:30","Fellowship","Courtyard"],
+        ["17:00","Mass (English)","Chapel"],
+        ["18:00","Dinner","Refectory"],
+        ["19:00","Fellowship","Courtyard"],
+        ["Night","Festival of Nations","Main Hall"],
+        ["21:30","Fellowship / snacks","Main Hall"],
+        ["22:00","Under-18 lights out · Bar opens","Main Hall"],
+        ["23:00","Bar closes · Lights out","Main Hall"],
+        ["24:00","Silence begins","Center-wide"]
+      ]
+    },
+    {
+      date: "WED · AUG 11", title: "We Walk Synodally — Love Made Visible in One Another (Community & Mission)",
+      events: [
+        ["07:00","Breakfast","Refectory"],
+        ["08:00","Bus departure","Main Gate"],
+        ["08:30","Travel to DMZ (ETA 40–90 min) / packed morning tea","En route"],
+        ["12:00","DMZ visit / packed lunch","DMZ"],
+        ["14:30","Return to Hanmaeum / packed afternoon tea","En route"],
+        ["15:00","Fellowship","Courtyard"],
+        ["17:00","Mass for Peace (Multilingual)","Chapel"],
+        ["18:00","Dinner","Refectory"],
+        ["19:00","Fellowship","Courtyard"],
+        ["Night","Q&A with Pope Leo / Prayer Vigil (Adoration & Reconciliation)","Main Hall"],
+        ["21:30","Fellowship / snacks","Main Hall"],
+        ["22:00","Under-18 lights out · Bar opens","Main Hall"],
+        ["23:00","Bar closes · Lights out","Main Hall"],
+        ["24:00","Silence begins","Center-wide"]
+      ]
+    },
+    {
+      date: "THU · AUG 12", title: "We Rise — Our Restlessness Is Holy (Vision & Hope)",
+      events: [
+        ["07:00","Prayer (Spanish)","Chapel"],
+        ["07:30","Breakfast","Refectory"],
+        ["08:30","Icebreaker / activity","Main Hall"],
+        ["09:00","Plenary conference — TBC: Fr Martin Davakan, OSA / Fr Alex Lam, OSA","Main Hall"],
+        ["10:30","Morning tea","Courtyard"],
+        ["11:00","Continent / country / region table discussion & plenary sharing","Main Hall"],
+        ["12:00","Lunch","Refectory"],
+        ["13:00","Breakout sessions — the Order's global mission & vision, or war & peace","Various fixed locations"],
+        ["14:00","Breakout sessions — Catholic Social Teaching & Social Justice","Various fixed locations"],
+        ["15:00","Afternoon tea / small group","Courtyard"],
+        ["15:30","Fellowship","Courtyard"],
+        ["17:00","Mass (Spanish)","Chapel"],
+        ["18:00","Dinner","Refectory"],
+        ["19:00","Fellowship","Courtyard"],
+        ["Night","AYE Closing Ceremony","Main Hall"],
+        ["21:30","Fellowship / snacks","Main Hall"],
+        ["22:00","Under-18 lights out · Bar opens","Main Hall"],
+        ["23:00","Bar closes · Lights out","Main Hall"],
+        ["24:00","Silence begins","Center-wide"]
+      ]
+    },
+    {
+      date: "FRI · AUG 13", title: "We Take Heart — Going Forth With Augustine's Courage (Sending & Commission)",
+      events: [
+        ["07:00","Prayer (Multilingual)","Chapel"],
+        ["07:30","Breakfast","Refectory"],
+        ["08:30","Checkout / luggage / departure","Rooms"],
+        ["09:30","Table discussion — conference round","Main Hall"],
+        ["11:00","Final Mass with the Prior General (English) — What's Next","Chapel"],
+        ["12:00","Lunch","Refectory"],
+        ["Note","Ongoing AYE responsibilities: Nursery · Shop · Bar · Secretary","—"]
+      ]
+    }
+  ];
+
+  // ---- Event dates: Aug 8–13, 2027 (day i => Aug 8 + i, local time) ----
+  const EVENT_YEAR = 2027, EVENT_MONTH = 7 /* Aug */, EVENT_START_DAY = 8;
+  const dayDate = i => new Date(EVENT_YEAR, EVENT_MONTH, EVENT_START_DAY + i);
+  const startOfDay = d => new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  const now = new Date();
+  const today0 = startOfDay(now);
+
+  // Index of "today" within the event (-1 if before/after the encounter).
+  let todayIndex = schedule.findIndex((_, i) => startOfDay(dayDate(i)).getTime() === today0.getTime());
+  // Which day to expand by default: today if live, else day 1.
+  const openIndex = todayIndex >= 0 ? todayIndex : 0;
+
+  const daysEl = document.getElementById('days');
+  schedule.forEach((day, i) => {
+    const el = document.createElement('div');
+    el.className = 'day' + (i === todayIndex ? ' is-today' : '');
+    const badge = i === todayIndex ? '<span class="today-badge">Today</span>' : '';
+    el.innerHTML = `
+      <button class="day-toggle" aria-expanded="false">
+        <div class="day-info">
+          <div class="d-label">Day ${i+1}<span class="d-date">${day.date}</span>${badge}</div>
+          <div class="d-title">${day.title}</div>
+        </div>
+        <svg class="day-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="day-events">
+        <div class="day-events-inner">
+          ${day.events.map(e => `
+            <div class="event">
+              <time>${e[0]}</time>
+              <div>
+                <div class="e-title">${e[1]}</div>
+                <div class="e-loc">${e[2]}</div>
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>
+    `;
+    daysEl.appendChild(el);
+
+    const toggle = el.querySelector('.day-toggle');
+    const eventsPanel = el.querySelector('.day-events');
+    // Each day opens and closes independently — no other day collapses, so
+    // the content above never shifts and the page can't jump.
+    toggle.addEventListener('click', () => {
+      const isOpen = el.classList.toggle('open');
+      eventsPanel.style.maxHeight = isOpen ? eventsPanel.scrollHeight + 'px' : null;
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    if (i === openIndex) { toggle.click(); } // open today (or day 1) by default
+  });
+
+  // ---- Live countdown chip in the hero ----
+  (function(){
+    const chip = document.getElementById('countdown');
+    const txt = document.getElementById('countdown-text');
+    if (!chip || !txt) return;
+    const eventEnd = startOfDay(dayDate(schedule.length - 1)); // last day (Aug 13)
+    const msDay = 86400000;
+    if (todayIndex >= 0) {
+      txt.innerHTML = `Happening now · <b>Day ${todayIndex + 1} of ${schedule.length}</b>`;
+    } else if (today0.getTime() < startOfDay(dayDate(0)).getTime()) {
+      const days = Math.round((startOfDay(dayDate(0)) - today0) / msDay);
+      txt.innerHTML = days === 1 ? '<b>Tomorrow</b> · see you in Seoul'
+                                 : `<b>${days} days</b> until we gather`;
+    } else if (today0.getTime() <= eventEnd.getTime()) {
+      txt.innerHTML = '<b>Happening now</b>';
+    } else {
+      txt.innerHTML = 'Until we meet again · <b>AYE27</b>';
+      chip.querySelector('.pulse').style.animation = 'none';
+    }
+    chip.hidden = false;
+    if (todayIndex >= 0) {
+      const cta = document.getElementById('schedule-cta');
+      if (cta) cta.textContent = "View today's schedule";
+    }
+  })();
+
+  // ---- Share (Web Share API with clipboard fallback) ----
+  (function(){
+    const btn = document.getElementById('share-btn');
+    const label = document.getElementById('share-label');
+    if (!btn) return;
+    const shareData = {
+      title: 'Augustinian Youth Encounter 2027',
+      text: 'One heart, one journey — AYE27, Aug 8–13 in Seoul.',
+      url: location.href
+    };
+    btn.addEventListener('click', async () => {
+      try {
+        if (navigator.share) { await navigator.share(shareData); return; }
+        await navigator.clipboard.writeText(shareData.url);
+        label.textContent = 'Link copied!';
+        setTimeout(() => { label.textContent = 'Share with your group'; }, 2200);
+      } catch (e) { /* user dismissed the share sheet — nothing to do */ }
+    });
+  })();
+
+  // ---- Add to calendar (generate an .ics on the fly) ----
+  (function(){
+    const btn = document.getElementById('calendar-btn');
+    if (!btn) return;
+    const pad = n => String(n).padStart(2, '0');
+    const d = (y,m,day) => `${y}${pad(m)}${pad(day)}`;
+    // All-day event spanning Aug 8 → 14 (DTEND is exclusive per the iCalendar spec).
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//AYE27//EN',
+      'CALSCALE:GREGORIAN',
+      'BEGIN:VEVENT',
+      'UID:aye27-2027@ayeosa.com',
+      `DTSTAMP:${d(2026,1,1)}T000000Z`,
+      `DTSTART;VALUE=DATE:${d(2027,8,8)}`,
+      `DTEND;VALUE=DATE:${d(2027,8,14)}`,
+      'SUMMARY:Augustinian Youth Encounter 2027 (AYE27)',
+      'LOCATION:Hanmaeum Youth Training Center, Yangju-si, Gyeonggi-do, South Korea',
+      'DESCRIPTION:One heart, one journey. AYE27 — following World Youth Day Seoul 2027.',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+    btn.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+  })();
+
+  // ---- Bottom nav active state on scroll ----
+  const tabs = document.querySelectorAll('.tab');
+  const sections = ['home','about','schedule','venue'].map(id => document.getElementById(id));
+
+  function setActive(id){
+    tabs.forEach(t => {
+      const on = t.dataset.target === id;
+      t.classList.toggle('active', on);
+      if (on) t.setAttribute('aria-current', 'page');
+      else t.removeAttribute('aria-current');
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+  sections.forEach(s => s && observer.observe(s));
+</script>
+
+</body>
+</html>
