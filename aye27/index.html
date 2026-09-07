@@ -125,6 +125,20 @@
   :focus-visible{ outline:2px solid var(--amber); outline-offset:2px; border-radius:2px; }
   .hero :focus-visible, .verse-section :focus-visible, .venue :focus-visible{ outline-color:var(--amber-light); }
 
+  /* ---------- Touch feedback ----------
+     Suppress the grey flash iOS/Android paint over a tapped element, then put
+     back an explicit :active state so a tap still visibly registers.
+     touch-action:manipulation also drops the 300ms double-tap-zoom delay. */
+  a, button{
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .btn:active{ transform:scale(0.98); filter:brightness(0.93); }
+  .action-btn:active{ background:rgba(255,255,255,0.14); }
+  .day-toggle:active{ background:rgba(10,22,51,0.05); }
+  .tab:active, .share-btn:active{ opacity:0.55; }
+  .skip-link:active{ filter:brightness(0.93); }
+
   /* ---------- Brand mark ---------- */
   .brand-mark{ display:block; }
   /* mono mark sits on the rose ground — flip it to solid white */
@@ -301,6 +315,17 @@
   }
   .event .e-title{ font-size:13.5px; font-weight:600; color:var(--text); margin-bottom:2px;}
   .event .e-loc{ font-size:12px; color:var(--text-muted); }
+  /* Optional video-call chip on an event (4th field in the schedule data) */
+  .e-link{
+    display:inline-flex; align-items:center; gap:6px; margin-top:7px;
+    padding:5px 11px; border-radius:100px; text-decoration:none;
+    background:rgba(0,68,169,0.07); border:1px solid rgba(0,68,169,0.28);
+    color:var(--cobalt); font-family:'IBM Plex Mono', monospace;
+    font-size:11px; font-weight:500; letter-spacing:0.02em;
+  }
+  .e-link svg{ width:13px; height:13px; flex-shrink:0; }
+  .e-link:active{ background:rgba(0,68,169,0.15); }
+  .e-link[aria-disabled="true"]{ opacity:0.75; cursor:default; }
   .draft-note{
     display:flex; align-items:center; gap:8px; font-size:11.5px; color:var(--text-muted);
     margin-top:16px; font-family:'IBM Plex Mono', monospace;
@@ -374,6 +399,7 @@
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     .day-events, .day-chevron{ transition:none; }
+    .btn:active{ transform:none; }
   }
 </style>
 </head>
@@ -611,7 +637,8 @@
         ["17:00","Mass for Peace (Multilingual)","Chapel"],
         ["18:00","Dinner","Refectory"],
         ["19:00","Fellowship","Courtyard"],
-        ["Night","Q&A with Pope Leo / Prayer Vigil (Adoration & Reconciliation)","Main Hall"],
+        ["Night","Q&A with Pope Leo / Prayer Vigil (Adoration & Reconciliation)","Main Hall",
+          { label:"Video link — to be announced", href:"#" }],
         ["21:30","Fellowship / snacks","Main Hall"],
         ["22:00","Under-18 lights out · Bar opens","Main Hall"],
         ["23:00","Bar closes · Lights out","Main Hall"],
@@ -689,6 +716,12 @@
               <div>
                 <div class="e-title">${e[1]}</div>
                 <div class="e-loc">${e[2]}</div>
+                ${e[3] ? `<a class="e-link" href="${e[3].href}"${e[3].href === '#'
+                    ? ' aria-disabled="true" onclick="return false;"'
+                    : ' target="_blank" rel="noopener"'}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="M15.5 10.5l6-3.5v10l-6-3.5z"/></svg>
+                  ${e[3].label}
+                </a>` : ''}
               </div>
             </div>`).join('')}
         </div>
